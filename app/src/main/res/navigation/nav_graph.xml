@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.smartgreen.ui.fragment.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_devices"
+            app:destination="@id/deviceListFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.smartgreen.ui.fragment.RegisterFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_devices"
+            app:destination="@id/deviceListFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deviceListFragment"
+        android:name="com.smartgreen.ui.fragment.DeviceListFragment"
+        android:label="Mis Invernaderos"
+        tools:layout="@layout/fragment_device_list">
+        <action
+            android:id="@+id/action_devices_to_dashboard"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_devices_to_pair"
+            app:destination="@id/pairDeviceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.smartgreen.ui.fragment.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <argument
+            android:name="deviceId"
+            app:argType="string" />
+        <argument
+            android:name="deviceName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_dashboard_to_history"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_alerts"
+            app:destination="@id/alertsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.smartgreen.ui.fragment.HistoryFragment"
+        android:label="Historial"
+        tools:layout="@layout/fragment_history">
+        <argument
+            android:name="deviceId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/alertsFragment"
+        android:name="com.smartgreen.ui.fragment.AlertsFragment"
+        android:label="Alertas"
+        tools:layout="@layout/fragment_alerts">
+        <argument
+            android:name="deviceId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pairDeviceFragment"
+        android:name="com.smartgreen.ui.fragment.PairDeviceFragment"
+        android:label="Agregar Dispositivo"
+        tools:layout="@layout/fragment_pair_device">
+        <action
+            android:id="@+id/action_pair_to_devices"
+            app:destination="@id/deviceListFragment"
+            app:popUpTo="@id/deviceListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

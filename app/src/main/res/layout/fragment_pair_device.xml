@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1F13"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar dispositivo"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#C8E6C3"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresa el código que aparece\nen la pantalla LCD del ESP8266"
+            android:textSize="13sp"
+            android:textColor="#6A9E6A"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Ícono LCD -->
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:background="@drawable/bg_card"
+            android:gravity="center"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SG-?????"
+                android:textColor="#5EC95E"
+                android:textSize="16sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Código de emparejamiento -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Código de emparejamiento"
+            android:textColor="#6A9E6A"
+            android:textSize="12sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etPairingCode"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_input"
+            android:hint="Ej: SG-4821"
+            android:textColor="#5EC95E"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:inputType="textCapCharacters"
+            android:gravity="center"
+            android:letterSpacing="0.15"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Nombre del dispositivo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del dispositivo"
+            android:textColor="#6A9E6A"
+            android:textSize="12sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etDeviceName"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_input"
+            android:hint="Ej: Invernadero Principal"
+            android:textColor="#C8E6C3"
+            android:inputType="textCapSentences"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="28dp" />
+
+        <Button
+            android:id="@+id/btnPair"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Conectar dispositivo"
+            android:backgroundTint="#2D6B2D"
+            android:textColor="#A8D8A8"
+            android:layout_marginBottom="16dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#E05252"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

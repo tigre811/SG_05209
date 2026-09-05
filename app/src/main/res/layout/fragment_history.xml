@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0D1F13"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="24dp"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Historial (últimas 20 lecturas)"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#C8E6C3"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Solo temperatura y humedad -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnShowTemp"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="Temperatura"
+            android:textSize="12sp"
+            android:backgroundTint="#2D6B2D"
+            android:textColor="#A8D8A8"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnShowHum"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="Humedad"
+            android:textSize="12sp"
+            android:backgroundTint="#1A4D1A"
+            android:textColor="#6A9E6A"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <!-- Instrucción de deslizamiento -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="← Desliza la gráfica para ver el historial →"
+        android:textColor="#3D6E3D"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Gráfica deslizable -->
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>

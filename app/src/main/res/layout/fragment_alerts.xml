@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1F13">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configurar Alertas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#C8E6C3"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Temp máxima -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="🌡️ Temperatura máxima" android:textColor="#C8E6C3" android:textSize="14sp" />
+                <TextView android:id="@+id/tvTempMax" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="35°C" android:textColor="#5EC95E" android:textSize="14sp" android:textStyle="bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/seekTempMax" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="50" android:progress="35" android:progressTint="#5EC95E" android:thumbTint="#5EC95E" android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Temp mínima -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="🌡️ Temperatura mínima" android:textColor="#C8E6C3" android:textSize="14sp" />
+                <TextView android:id="@+id/tvTempMin" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="10°C" android:textColor="#5EC95E" android:textSize="14sp" android:textStyle="bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/seekTempMin" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="30" android:progress="10" android:progressTint="#5EC95E" android:thumbTint="#5EC95E" android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Humedad mínima -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="💧 Humedad mínima" android:textColor="#C8E6C3" android:textSize="14sp" />
+                <TextView android:id="@+id/tvHumMin" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="40%" android:textColor="#5EC95E" android:textSize="14sp" android:textStyle="bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/seekHumMin" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="100" android:progress="40" android:progressTint="#5EC95E" android:thumbTint="#5EC95E" android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Humedad máxima ← NUEVO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="💧 Humedad máxima" android:textColor="#C8E6C3" android:textSize="14sp" />
+                <TextView android:id="@+id/tvHumMax" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="85%" android:textColor="#5EC95E" android:textSize="14sp" android:textStyle="bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/seekHumMax" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="100" android:progress="85" android:progressTint="#5EC95E" android:thumbTint="#5EC95E" android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Guardar umbrales"
+            android:backgroundTint="#2D6B2D"
+            android:textColor="#A8D8A8"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvSaveStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

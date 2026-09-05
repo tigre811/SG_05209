@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1F13">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDeviceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ALMACEN"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#C8E6C3" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● En vivo"
+                    android:textSize="12sp"
+                    android:textColor="#5EC95E" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAlerts"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Alertas"
+                android:textSize="12sp"
+                android:backgroundTint="#1A4D1A"
+                android:textColor="#A8D8A8"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Historial"
+                android:textSize="12sp"
+                android:backgroundTint="#1A4D1A"
+                android:textColor="#A8D8A8" />
+        </LinearLayout>
+
+        <!-- Temperatura y Humedad en fila -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperatura"
+                    android:textColor="#6A9E6A"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvTemperatura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--.-°C"
+                    android:textColor="#C8E6C3"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humedad aire"
+                    android:textColor="#6A9E6A"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvHumedad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--.-%"
+                    android:textColor="#C8E6C3"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Última actualización -->
+        <TextView
+            android:id="@+id/tvLastUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Esperando datos..."
+            android:textColor="#3D6E3D"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Banner de emergencia -->
+        <LinearLayout
+            android:id="@+id/layoutEmergencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alert"
+            android:orientation="horizontal"
+            android:padding="14dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚠️"
+                android:textSize="20sp"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/tvEmergencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alerta activa"
+                android:textColor="#F0A0A0"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
